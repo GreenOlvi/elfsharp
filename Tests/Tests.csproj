@@ -41,13 +41,13 @@
     <Compile Include="UImage\SimpleTests.cs" />
     <Compile Include="UImage\GzipTests.cs" />
     <Compile Include="ELF\SectionGettingTests.cs" />
+    <Compile Include="MachO\OpeningTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="nunit.framework">
       <HintPath>..\Lib\nunit.framework.dll</HintPath>
-      <Package>nunit</Package>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -72,5 +72,6 @@
   <ItemGroup>
     <Folder Include="ELF\" />
     <Folder Include="UImage\" />
+    <Folder Include="MachO\" />
   </ItemGroup>
 </Project>
