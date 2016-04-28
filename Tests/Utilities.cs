@@ -10,7 +10,7 @@ namespace Tests
 			return Path.Combine(BinariesDirectory, name);
 		}
 
-		private static readonly string BinariesDirectory = "../../Binaries";
+		private static readonly string BinariesDirectory = Path.Combine("..", "..", "Binaries");
 	}
 }
 

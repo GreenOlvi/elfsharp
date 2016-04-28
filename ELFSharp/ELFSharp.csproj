@@ -75,6 +75,8 @@
     <Compile Include="ELF\Segments\Segment.cs" />
     <Compile Include="ELF\Segments\SegmentFlags.cs" />
     <Compile Include="ELF\Segments\SegmentType.cs" />
+    <Compile Include="PE\PE.cs" />
+    <Compile Include="PE\PEReader.cs" />
     <Compile Include="UImage\UImage.cs" />
     <Compile Include="UImage\CompressionType.cs" />
     <Compile Include="UImage\UImageReader.cs" />
@@ -88,6 +90,7 @@
   <ItemGroup>
     <Folder Include="ELF\" />
     <Folder Include="UImage\" />
+    <Folder Include="PE\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

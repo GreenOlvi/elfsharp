@@ -37,6 +37,7 @@
     <Compile Include="ELF\StringTableTests.cs" />
     <Compile Include="ELF\SymbolTableTests.cs" />
     <Compile Include="ELF\WebTests.cs" />
+    <Compile Include="PE\SimplePETests.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="UImage\SimpleTests.cs" />
     <Compile Include="UImage\GzipTests.cs" />
@@ -72,5 +73,6 @@
   <ItemGroup>
     <Folder Include="ELF\" />
     <Folder Include="UImage\" />
+    <Folder Include="PE\" />
   </ItemGroup>
 </Project>
