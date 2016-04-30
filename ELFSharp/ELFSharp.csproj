@@ -77,6 +77,7 @@
     <Compile Include="ELF\Segments\SegmentType.cs" />
     <Compile Include="PE\PE.cs" />
     <Compile Include="PE\PEReader.cs" />
+    <Compile Include="PE\Sections\MZHeader.cs" />
     <Compile Include="UImage\UImage.cs" />
     <Compile Include="UImage\CompressionType.cs" />
     <Compile Include="UImage\UImageReader.cs" />
