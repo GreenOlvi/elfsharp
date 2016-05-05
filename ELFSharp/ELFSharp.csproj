@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -75,9 +75,11 @@
     <Compile Include="ELF\Segments\Segment.cs" />
     <Compile Include="ELF\Segments\SegmentFlags.cs" />
     <Compile Include="ELF\Segments\SegmentType.cs" />
+    <Compile Include="PE\Class.cs" />
     <Compile Include="PE\PE.cs" />
     <Compile Include="PE\PEReader.cs" />
     <Compile Include="PE\Sections\MZHeader.cs" />
+    <Compile Include="PE\Sections\PEHeader.cs" />
     <Compile Include="UImage\UImage.cs" />
     <Compile Include="UImage\CompressionType.cs" />
     <Compile Include="UImage\UImageReader.cs" />
@@ -88,11 +90,7 @@
     <Compile Include="UImage\Architecture.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="ELF\" />
-    <Folder Include="UImage\" />
-    <Folder Include="PE\" />
-  </ItemGroup>
+  <ItemGroup />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
