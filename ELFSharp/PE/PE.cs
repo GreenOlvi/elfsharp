@@ -15,12 +15,14 @@ namespace ELFSharp.PE
             var reader = new BinaryReader(stream);
             MZHeader = new MZHeader(reader);
             _dosStub = reader.ReadBytes((int) (MZHeader.PEOffset - reader.BaseStream.Position));
+            PEHeader = new PEHeader(reader);
         }
 
         public string FileName { get; private set; }
 
         public MZHeader MZHeader { get; private set; }
         private byte[] _dosStub;
+        public PEHeader PEHeader { get; private set; }
 
     }
 }
