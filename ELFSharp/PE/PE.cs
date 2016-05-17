@@ -12,18 +12,15 @@ namespace ELFSharp.PE
 
         internal PE(Stream stream)
         {
-            _reader = new BinaryReader(stream);
-            ReadMZHeader();
+            var reader = new BinaryReader(stream);
+            MZHeader = new MZHeader(reader);
+            _dosStub = reader.ReadBytes((int) (MZHeader.PEOffset - reader.BaseStream.Position));
         }
 
         public string FileName { get; private set; }
 
-        private readonly BinaryReader _reader;
-        private MZHeader _mzHeader;
+        public MZHeader MZHeader { get; private set; }
+        private byte[] _dosStub;
 
-        private void ReadMZHeader()
-        {
-            _mzHeader = new MZHeader(_reader);
-        }
     }
 }

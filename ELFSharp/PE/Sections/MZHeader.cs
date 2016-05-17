@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace ELFSharp.PE.Sections
 {
-    class MZHeader
+    public class MZHeader
     {
+        private static readonly byte[] SignatureBytes = {0x4D, 0x5A}; // "MZ"
+
         public MZHeader(BinaryReader reader)
         {
-            Signature = reader.ReadUInt16();
-            if (Signature != 0x5A4D)
+            Signature = reader.ReadBytes(2);
+            if(!Signature.SequenceEqual(SignatureBytes))
             {
                 throw new Exception("Not a MZ header.");
             }
@@ -42,10 +41,10 @@ namespace ELFSharp.PE.Sections
                 .Select(i => reader.ReadUInt16())
                 .ToArray();
 
-            lfanew = reader.ReadUInt32();
+            PEOffset = reader.ReadUInt32();
         }
 
-        public UInt16 Signature { get; private set; }
+        public byte[] Signature { get; private set; }
         public UInt16 ExtraBytes { get; private set; }
         public UInt16 Pages { get; private set; }
         public UInt16 RelocationItems { get; private set; }
@@ -63,6 +62,6 @@ namespace ELFSharp.PE.Sections
         public UInt16 OEMId { get; private set; }
         public UInt16 OEMInfo { get; private set; }
         public UInt16[] Reserved2 { get; private set; }
-        public UInt32 lfanew { get; private set; }
+        public UInt32 PEOffset { get; private set; }
     }
 }
